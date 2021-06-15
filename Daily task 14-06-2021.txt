@@ -1,0 +1,55 @@
+JavaScript vs NodeJs differences:
+
+JavaScript:
+
+1.It is a programming language that used for writing scripts on the website.
+2.JavaScript can only be run in the browsers.
+3.JavaScript basically used on the client side.
+4.JavaScript capable enoug to add HTML and play with DOM.
+5.JavaScript can run in any browser like JavaScriptcore in Safari and Spider Monkey in Firefox.
+6.JavaScript used in forentend development.
+7.Some of the JavaScript frameworks are RamdaJS,Typed JS etc.,
+8.It is the upgraded version of ECMA script that uses Chromes V8 engine written in C++.
+
+NodeJs:
+
+1.It is a JavaScriptruntime environment.
+2.NodeJs code run outside the browser.
+3.NodeJs used on the serverside.
+4.NodeJs doesnot have capability to add HTML tags.
+5.NodeJs can only run in V8 engine of Google chrome.
+6.NodeJs used in serverside development.
+7.NodeJs modules are Lodash express etc,
+8.NodeJs written in C,C++ and JavaScript.
+
+HTTP 1.1 vs HTTP 2 differences:
+
+HTTP 1.1:
+
+1.HTTP 1.1 was developed by Timothy Berners-Lea in 1989.
+2.It is top level application protocol.
+3.It exchanges information between client computer and remote webserver or local webserver.
+4.In this process client sends a text based request to a server by calling a method like GET or PoST.
+5.In response server sendsa resourse like an HTML page back to client.
+
+HTTP 2:
+
+1.HTTP 2 was developed by Google on May 2015.
+2.It is SPDY(Speedy) protocol.
+3.It was developed with the intention of reducing
+	(i).Compression
+	(ii).Multiplexing
+	(iii).Prioritization
+4.Encapsulate all messages in Bianry format.
+5.HTTP 2 — Advantages of the Binary Framing Layer:
+	In HTTP 2, the binary framing layer encodes requests/responses and cuts them up into smaller packets of information, greatly increasing the flexibility of data transfer.Greatly 
+	increasing the flexibilityof the data transfer. HTTP 1.1 uses multiple TCP connection where as HTTP 2 uses single line connection object between two machines.
+6.HTTP 2 — Stream Prioritization.
+	Stream prioritization not only solves the possible issue of requests competing for the same resource, but also allows developers to customize the relative weight of requests 
+	to better optimize application performance. In this section, we will break down the process of this prioritization in order to provide better insight into how you can leverage 
+	this feature of HTTP 2.
+	
+	
+	
+	
+
