@@ -1,0 +1,115 @@
+Programs in anonymous function & IIFE
+1. Print odd numbers in an array
+
+Using IIFE:
+
+	(function(){
+	var arr=[];
+	for(var i=1;i<=100;i++)
+	{
+	if(i%2!=0)
+	{
+	arr.push(i);
+	}
+	}
+console.log(arr);	
+})();
+
+Using Anonymous:
+
+var boo = function(){
+    var arr=[];  
+    for(var i=1;i<=100;i++)
+	{
+	if(i%2!=0)
+	{
+	arr.push(i);
+	}
+	}
+    console.log(arr);
+}
+boo();
+
+2. Convert all the strings to title caps in a string array
+
+Using Anonymous:
+
+var boo = function(){
+    var arr=["dhinesh","tree","tiger","animal"];  
+    for(var i=1;i<arr.length;i++)
+	{
+        console.log(arr[i].charAt(0).toUpperCase()+arr[i].substr(1).toLowerCase());
+}
+}
+boo();
+
+Using IIFE:
+ (function(){
+    var arr=["dhinesh","tree","tiger","animal"];  
+    for(var i=1;i<arr.length;i++)
+	{
+        console.log(arr[i].charAt(0).toUpperCase()+arr[i].substr(1).toLowerCase());
+}
+})();
+
+3. Sum of all numbers in an array:
+
+Using Anonymous:
+
+var boo = function(a,b,c,d){
+    var sum=a+b+c+d;
+var arr=[sum];
+console.log(arr);
+}
+boo(10,20,30,50);
+
+Using IIFE:
+
+(function(a,b,c,d){
+    var sum=a+b+c+d;
+var arr=[sum];
+console.log(arr);
+})(10,20,30,40);
+
+4. Return all the prime numbers in an array
+
+Using Anonymous:
+
+var prime = function(num){
+    for(var i=2;i<=num;i++)
+	{
+        if(num%i==0)
+        {
+            return false;
+        }
+       return true;
+    }
+}
+ var display=function(num1)
+ {
+     var arr=[2];
+     for(var i=1;i<num1;i++)
+     {
+     if(prime(i))
+     {
+         arr.push(i);
+     }
+}
+console.log(arr);
+}
+display(10);
+
+Using IIFE:
+
+(function (n) {
+    var arr = [2];
+    for ( var i = 3; i < n; i+=2 ) {
+        for ( var j = 2; j < i; j++ ) {
+            if ( i % j === 0 ) {
+                console.log("");
+            }
+        }
+        arr.push(j);
+    }
+    console.log(arr);
+})(10);
