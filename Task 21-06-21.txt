@@ -1,4 +1,5 @@
-Programs in anonymous function & IIFE
+Task 1: Programs in anonymous function & IIFE
+
 1. Print odd numbers in an array
 
 Using IIFE:
@@ -113,3 +114,553 @@ Using IIFE:
     }
     console.log(arr);
 })(10);
+
+5.Return median of two sorted arrays of same size 
+
+Using Anonymous:
+
+var median=function(arr1,arr2,n)
+{
+ var i=0;
+ var j=0;
+ var m1=-1,m2=-1
+ var count;
+for(count=0;count<=n;count++)
+{
+    if(i==n)
+    {
+        m1=m2;
+        m2=arr2[0];
+        break;
+    }
+    else if(j==n)
+    {
+        m1=m2;
+        m2=arr1[0];
+        break;
+    }
+    if(arr1[i]<=arr2[j])
+    {
+        m1=m2;
+        m2=arr1[i];
+        i++;
+    }
+    else
+    {
+        m1=m2
+        m2=arr2[j];
+		j++
+    }
+}
+return (m1+m2)/2
+}
+var ar1 =[2, 13, 17, 30, 45];
+var ar2 =[1, 12, 15, 26, 38];
+var n1 = ar1.length;
+var n2 = ar2.length;
+if (n1 == n2)
+    console.log("Median is "+ median(ar1, ar2, n1));
+else
+    console.log("Doesn't work for arrays of unequal size");
+	
+Using IIFE:
+( function()
+{
+    var arr1 =[2, 13, 17, 30, 45];
+    var arr2 =[1, 12, 15, 26,48];
+    var n1 = arr1.length;
+    var n2 = arr2.length;
+    if (n1 != n2)
+    {
+        console.log("Doesn't work for arrays of unequal size");
+        return;
+    }
+ var i=0;
+ var j=0;
+ var m1=-1,m2=-1
+ var count;
+for(count=0;count<=n1;count++)
+{
+    if(i==n1)
+    {
+        m1=m2;
+        m2=arr2[0];
+        break;
+    }
+    else if(j==n1)
+    {
+        m1=m2;
+        m2=arr1[0];
+        break;
+    }
+    if(arr1[i]<=arr2[j])
+    {
+        m1=m2;
+        m2=arr1[i];
+        i++;
+    }
+    else
+    {
+        m1=m2
+        m2=arr2[j];
+		j++
+    }
+}
+console.log("Median is " +(m1+m2)/2);
+})();
+
+6.Remove duplicates from an array
+
+Using Anonymous:
+
+var unique=function(arr)
+{
+    let uni=[...new Set(arr)];
+    console.log(uni);
+}
+const arr1=[1,2,3,1,5];
+unique(arr1);
+
+Using IIFE:
+
+(function()
+{
+    let arr1=["Dhinesh","Baby","Dhinesh"];
+    let uni=[...new Set(arr1)];
+    console.log(uni);
+})();
+
+Rotate an array by k times
+
+Using Anonymous:
+
+var rotate=function(a,n,k)
+{
+    var num1=[], num2=[];
+    k = k % n;
+    for (let i = 0; i < n; i++) {
+        if (i < k) {
+             num1.push(a[n+i -k]);
+        }
+        else {
+             num2.push(a[i-k]);
+            
+        }
+        
+    }
+    console.log("Values on the " +k +" rotation "+num1+" "+num2);
+}
+let Array = [1,2,3,4,5];
+let N = Array.length;
+let K = 1;
+rotate(Array, N, K);
+K=2;
+rotate(Array, N, K);
+
+Using IIFE:
+
+(function()
+{
+    let a = [1,2,3,4,5];
+    let n = a.length;
+    let k=2;
+    var num1=[], num2=[];
+    k = k % n;
+    for (let i = 0; i < n; i++) {
+        if (i < k) {
+             num1.push(a[n+i -k]);
+            
+        }
+        else {
+             num2.push(a[i-k]);
+        }
+        
+    }
+    console.log("Values on the " +k +" rotation "+num1+" "+num2);
+})();
+
+7. Return all the palindromes in an array
+
+Using Anonymous function:
+
+var palindrome=function(arr)
+{
+    var palArray=[];
+    for(var str=0;str<arr.length;str++)
+    {
+     if(arr[str] == arr[str].split('').reverse().join(''))
+     palArray.push(arr[str]);
+  }
+console.log(palArray);
+}
+palindrome(["malayalam","121","111","caretaker","343", "test"]);
+
+Using IIFE:
+
+(function()
+{
+    var arr=["malayalam","121","111","caretaker","343", "test"];
+    var palArray=[];
+    for(var str=0;str<arr.length;str++)
+    {
+     if(arr[str] == arr[str].split('').reverse().join(''))
+     palArray.push(arr[str]);
+  }
+console.log(palArray);
+})();
+
+
+Task 2: Programs in arrow functions:
+
+1.Print odd numbers in an array:
+
+var odd = function(arr){
+    var arr1=[];
+    arr.forEach(element => {
+        if(element%2!=0)
+        {
+            arr1.push(element);
+        } 
+    }); 
+    console.log(arr1);
+}
+odd([1,2,3,4,5,6,7,8,9,10]);
+
+2.Convert all the strings to title caps in a string array:
+
+var boo = function(){
+    var arr=["dhinesh","tree","tiger","animal"];  
+    arr.forEach(element => {
+        console.log(element.charAt(0).toUpperCase()+element.substr(1).toLowerCase());
+    });
+}
+boo();
+
+3.Sum of all numbers in an array:
+
+var sum = function(arr){
+    var sum=0;
+    arr.forEach(element => {
+     sum=sum+element;
+    });
+var sumArray=[sum]
+console.log(sumArray);
+}
+sum([10,20,30,50]);
+
+4.Return all the prime numbers in an array
+
+var prime = function(num){
+    for(var i=2;i<=num;i++)
+	{
+        if(num%i==0)
+        {
+            return false;
+        }
+       return true;
+    }
+}
+ var display=function(num1){
+    var arr=[2];
+ num1.forEach(element => {
+    if(prime(element))
+    {
+        arr.push(element);
+    }
+     
+ });
+console.log(arr);
+}
+display([1,2,3,4,5,6,7,8,9,10]);
+
+5.  Return all the palindromes in an array
+
+var palindrome=function(arr)
+{
+    var palArray=[];
+    arr.forEach(element => {
+        if(element == element.split('').reverse().join(''))
+        palArray.push(element);
+    });
+
+console.log(palArray);
+}
+palindrome(["malayalam","121","111","caretaker","343", "test"]);
+
+Task 3: JavaScript Functions — Warmup Pbms :
+
+1.Write a function called “addFive”.Given a number, “addFive” returns 5 added to that number.
+
+function addFive(num) { 
+ return num+5;
+}
+var result = addFive(10)
+console.log(result);
+var result = addFive(5)
+console.log(result);
+var result = addFive(0)
+console.log(result);
+
+2.Write a function called “getOpposite”.Given a number, return its opposite
+
+function getOpposite(num) {
+    if(Number.isInteger(num))
+return num-(num*2);
+else
+return -1;
+}
+var result = getOpposite(5)
+console.log(result);
+var result = getOpposite(-5)
+console.log(result);
+var result = getOpposite("5")
+console.log(result);
+var result = getOpposite(5.5)
+console.log(result);
+
+3.Fill in your code that takes an number minutes and converts it to seconds.
+
+function toSeconds(min) {
+    return min*60;   
+}
+var result = toSeconds(5)
+console.log(result);
+var result = toSeconds(3)
+console.log(result);
+var result = toSeconds(2)
+console.log(result);
+
+4.Create a function that takes a string and returns it as an integer.
+
+function toInteger(mystr) {
+    return parseInt(mystr)
+}
+var myint = toInteger("1")
+console.log(myint);
+
+5.Create a function that takes a number as an argument, increments the number by +1 and returns the result.
+
+function nextNumber(myint) {
+return myint+1;
+}
+var myNextint = nextNumber(0);
+console.log(myNextint);
+var myNextint = nextNumber(9);
+console.log(myNextint);
+var myNextint = nextNumber(-1);
+console.log(myNextint);
+
+6.Create a function that takes an array and returns the first element.
+
+function getFirstElement(arr) {
+    return arr[0];
+}
+var data = getFirstElement([1,2,3]);
+console.log(data);
+var data = getFirstElement([80,5,100]);
+console.log(data);
+var data = getFirstElement([-100,1,2]);
+console.log(data);
+
+7.Write a function that converts hours into seconds.
+
+function hourToSeconds(hour) {
+return hour*60*60;
+}
+var data = hourToSeconds(2);
+console.log(data);
+var data = hourToSeconds(3);
+console.log(data);
+var data = hourToSeconds(1);
+console.log(data);
+
+8.Find the Perimeter of a Rectangle
+
+function findPerimeter(num1,num2) {
+    return 2*(num1+num2);
+}
+var peri = findPerimeter(6,7);
+console.log(peri);
+
+9.Less Than 100?
+Given two numbers, return true if the sum of both numbers is less than 100. Otherwise return false.
+
+function lessThan100(num1,num2) {
+var sum=num1+num2;
+if(sum<100)
+return true
+else
+return false
+}
+var res = lessThan100(22,15);
+console.log(res);
+var res = lessThan100(50,51);
+console.log(res);
+
+10.There is a single operator in JavaScript, capable of providing the remainder of a division operation. Two numbers are passed as parameters. The first parameter divided by the second parameter will have a remainder, possibly zero. Return that value.
+
+function remainder(num1,num2) {
+    return num1%num2;
+}
+var res = remainder(1,3);
+console.log(res);
+var res = remainder(3,4);
+console.log(res);
+var res = remainder(-9,45);
+console.log(res);
+var res = remainder(5,5);
+console.log(res);
+
+11.MacDonald is asking you to tell him how many legs can be counted among all his animals. The farmer breeds three species:
+turkey = 2 legs
+horse = 4 legs
+pigs = 4 legs
+The farmer has counted his animals and he gives you a subtotal for each species. You have to implement a function that returns the total number of legs of all the animals.
+
+function CountAnimals(tur,horse,pigs) {
+    var turky=2;
+    var hrse=4;
+    var pig=4;
+return (tur*turky)+(horse*hrse)+(pigs*pig)
+}
+var legs = CountAnimals(2,3,5)
+console.log(legs);
+var legs = CountAnimals(1,2,3)
+console.log(legs);
+
+12.Frames Per Second
+Create a function that returns the number of frames shown in a given number of minutes for a certain FPS.
+
+function frames(num1,num2) {
+    return num1*num2*60;
+}
+var fps = frames(1,1);
+console.log(fps);
+var fps = frames(10,1);
+console.log(fps);
+var fps = frames(2,1);
+console.log(fps);
+
+13.Check if an Integer is Divisible By Five Create a function that returns true if an integer is evenly divisible by 5, and false otherwise.
+
+function divisibleByFive(num1) {
+    if(num1%5==0)
+    return true
+    else
+    return false
+}
+var divisible = divisibleByFive(37);
+console.log(divisible);
+var divisible = divisibleByFive(-15);
+console.log(divisible);
+
+14.Write a function called “isEven”.
+Given a number, “isEven” returns whether it is even.
+
+function isEven(num){
+   if(num%2==0)
+   return true
+   else if(!isInteger(num))
+   return -1
+   else
+   return false
+   }
+   var even = isEven("5")
+   console.log(even);
+   
+15.Write a function called “areBothOdd”.
+Given 2 numbers, “areBothOdd” returns whether or not both of the given numbers are odd.
+
+function areBothOdd(num1, num2){
+    if(num1%2!=0 && num2%2!=0)
+    return true;
+    else
+    return false
+   } 
+   var odd=areBothOdd(0,0);
+   console.log(odd);
+   var odd=areBothOdd(4,4);
+   console.log(odd);
+   var odd=areBothOdd(5,7);
+   console.log(odd);
+   
+16.Write a function called “getFullName”.
+Given a first and a last name, “getFullName” returns a single string with the given first and last names separated by a single space.
+
+function getFullName(firstName, lastName){
+  return firstName+" "+lastName;
+   }
+   var full=getFullName("Hello","World");
+   console.log(full);
+   var full=getFullName("","");
+   console.log(full);
+   var full=getFullName("","World");
+   console.log(full);
+   
+17.Write a function called “getLengthOfWord”.
+Given a word, “getLengthOfWord” returns the length of the given word.
+
+function getLengthOfWord(word1){
+    if(isString(word1))
+    return word1.length;
+    else
+    return -1;
+   }
+   var len=getLengthOfWord("Dhinesh");
+   console.log(len);
+   var len=getLengthOfWord("");
+   console.log(len);
+   var len=getLengthOfWord();
+  console.log(len);
+   var len=getLengthOfWord(9);
+   console.log(len);
+   
+18.Write a function called “isSameLength”.
+Given two words, “isSameLength” returns whether the given words have the same length.
+
+function isSameLength(word1, word2){
+   if(word1.length==word2.length)
+   return true;
+    else
+    return false
+}
+var samelen=isSameLength("Dhi","Nes")
+console.log(samelen);
+var samelen=isSameLength("Dhin","Nes")
+console.log(samelen);
+
+19.Create a function to calculate the distance between two points defined by their x, y coordinates.
+
+function getDistance(x1, y1, x2,  y2)
+{
+    return Math.sqrt(Math.pow(x2 - x1, 2) +
+                Math.pow(y2 - y1, 2) * 1.0);
+}
+console.log(getDistance(100, 100, 400, 300));
+
+20.Write a function called “getNthElement”.
+Given an array and an integer, “getNthElement” returns the element at the given integer, within the given array. If the array has a length of 0, it should return ‘undefined’.
+
+function getNthElement(array,n){ 
+if(array.length==0)
+return "undefined"
+else
+return array[n];
+   }
+   var element=getNthElement([1,3,5,6,8],4);
+   console.log(element);
+   
+21.Write a function called “getLastElement”.
+Given an array, “getLastElement” returns the last element of the given array. If the given array has a length of 0, it should return ‘-1’.
+
+function getLastElement(arr){
+    var len=arr.length
+    if(len==0)
+    return -1;
+    else
+   return arr[len-1];
+   }
+var last=getLastElement([1,2,3,4,5]);
+console.log(last);
+var last=getLastElement([]);
+console.log(last);
