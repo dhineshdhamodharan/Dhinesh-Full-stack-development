@@ -1,0 +1,306 @@
+Task4:
+GUVI: Zen Class — Part 2 : Find the culprits and nail them — debugging javascript loops
+
+Fixed Code:
+
+1. Write a code to print the numbers in the array
+Output: 1234567891011
+
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var new_string = "";
+for (var i = 0; i < 11; i++) { // changed the i value to 0 and changed i-- to i++
+ new_string += numsArr[i] 
+}
+console.log(new_string);
+
+2. Write a code to print the numbers in the array
+Output: 1,2,3,4,5,6,7,8,9,10,11
+
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var new_string = "";
+ 
+for (var i = 0; i < 11; i++) { // Changed the i value to 0 from 1
+ new_string += numsArr[i] // Removed the + , 
+}
+console.log(new_string);
+
+3. Write a code to print from last to first with spaces (Make sure there is no space after the last element 1)
+Output: 11 10 9 8 7 6 5 4 3 2 1
+
+var new_string = "";
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+for (var i = numsArr.length-1; i>=0; i--) {
+ if(i==0)
+ {
+    new_string = new_string+numsArr[i];
+ }
+ else
+ {
+    new_string = new_string+numsArr[i] + " "
+ }
+}
+console.log(new_string);
+
+4.Write a code to replace the array value — If the number is even, replace it with ‘even’.
+Output:[ 1, “even”, 3, “even”, 5, “even”, 7, “even”, 9, “even”, … ]
+
+var numsArr = [1,2,3,4,5,6,7,8,9,10,11];
+for (var i = 0;i <=10; i++) 
+{
+ if(numsArr[i]%2 == 0 )
+ {
+ numsArr[i]="even";
+ }
+}
+console.log(numsArr);
+
+5.Write a code to replace the array value — If the index is even, replace it with ‘even’.
+
+
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+for (var i = 0; i <=10; i++) {
+ if(i%2 == 0 )
+ {
+ numsArr[i]="even"
+ }
+}
+console.log(numsArr);
+
+6.Write a code to add all the numbers in the array
+Output: 66
+
+var numsArr = [1,2,3,4,5,6,7,8,9,10,11];
+var sum=0;
+for (var i = 0; i <=numsArr.length-1; i++) {
+ sum = sum+numsArr[i];
+}
+console.log(sum);
+
+7.Write a code to add the even numbers only
+Output: 30
+
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var sum=0;
+for (var i = 0; i <numsArr.length-1; i++) {
+ if(numsArr[i]%2==0)
+ sum += numsArr[i]
+}
+console.log(sum);
+
+8.Write a code to add the even numbers and subract the odd numbers
+Output: 94
+
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var sum=100;
+for (var i = 0; i <=numsArr.length-1; i++) {
+ if(numsArr[i]%2==0)
+ {
+ sum += numsArr[i]
+ }
+ else
+ {
+ sum -= numsArr[i]
+ }
+}
+console.log(sum);
+
+9.Write a code to print inner arrays
+Output:
+Array(5) [ 1, 2, 3, 4, 5 ]
+Array(6) [ 6, 7, 8, 9, 10, 11 ]
+
+var numsArr = [[1, 2, 3, 4, 5],[ 6, 7, 8, 9, 10, 11]];
+for (var i = 0; i < numsArr.length; i++)
+{
+ console.log( numsArr[i]);
+}
+
+10.Write a code to print elements in the inner arrays
+Output: 1234567891011
+
+var numsArr = [[1, 2, 3, 4, 5],[ 6, 7, 8, 9, 10,11]];
+var str_all=[];
+for (var i = 0; i < numsArr.length; i++) 
+{
+ var inner_array = numsArr[i];
+ for(var j = 0 ; j < inner_array.length;j++ )
+     str_all.push(inner_array[j]);
+}
+console.log(str_all);
+
+11.Write a code to replace the array value — If the index is even, replace it with ‘even’.
+Output: [ [“even”, 2, “even”, 4, “even”], [6, “even”, 8, “even”, 10, …] ]
+
+var numsArr = [[1, 2, 3, 4, 5],[ 6, 7, 8, 9, 10, 11]];
+var str_all=[];
+for (var i = 0; i < numsArr.length; i++) {
+ var inner_array = numsArr[i];
+ for(var j = 0 ; j < inner_array.length;j++)
+ {
+      if(j%2 == 0 )
+      {
+         inner_array[j] = "even";
+         str_all.push(inner_array[j]);
+       }
+       else
+       str_all.push(inner_array[j]);
+ }   
+}
+console.log(str_all);
+
+12.Write a code to print elements in the inner arrays in reverse
+Output: 11 10 9 8 7 6 5 4 3 2 1
+
+var numsArr = [[1, 2, 3, 4, 5],[ 6, 7, 8, 9, 10,11]];
+var str_all="";
+for (var i = numsArr.length-1; i >= 0; i--) 
+{
+ var inner_array = numsArr[i];
+ for(var j = inner_array.length-1 ; j>=0 ;j-- )
+     str_all=str_all+inner_array[j];
+}
+console.log(str_all);
+
+13.Write a code to add elements in the inner arrays based on odd or even values
+Output:
+36
+30
+
+var numsArr = [[1, 2, 3, 4, 5],[ 6, 7, 8, 9, 10, 11]];
+var sum_odd=0;
+var sum_even=0;
+for (var i = 0; i < numsArr.length; i++) {
+ var inner_array = numsArr[i];
+ for(var j = 0 ; j < inner_array.length;j++ ){
+ if(inner_array[j]%2!=0)
+ {
+ sum_odd = sum_odd+inner_array[j]
+ }
+ else
+ {
+ sum_even = sum_even+inner_array[j]
+ }
+}
+}
+console.log(sum_odd);
+console.log(sum_even)
+
+Task 5: Find the culprits and nail them — debugging javascript
+
+1.Fix the code to get the largest of three.
+
+aa = (f,s,t) => {
+    if(f>s && f>t){
+    console.log(f)}
+    else if(s>f && s>t){
+    console.log(s)}
+    else{
+    console.log(t)}
+   }
+   aa(1,2,3);
+   
+2.Fix the code to Sum of the digits present in the number
+
+function add(value)
+{
+    let sum=0;
+    while (value) {
+        sum += value % 10;
+        value = Math.floor(value / 10);
+    }
+    return sum;
+}
+let n = 123;
+console.log(add(n));
+
+3.Fix the code to Sum of all numbers using IIFE function
+
+(function() {
+const arr = [9,8,5,6,4,3,2,1];
+let sum = 0;
+ for (var i = 0; i < arr.length; i++)
+ {
+ sum= sum+arr[i];
+ }
+ console.log(sum);
+ return sum;
+})();
+
+4.Fix the code to gen Title caps.
+
+var ano = function(arro) {
+    var arro = ["guvi", "geek", "zen", "fullstack"];
+ for (var i = 0; i < arro.length; i++) {
+ console.log(arro[i].charAt(0).toUpperCase() + arro[i].substr(1).toLowerCase());
+ }
+}
+ano();
+
+5.Fix the code to sum the number in that array
+
+const num = [10, 20, 30, 40,50,60,70,80,90,100] 
+const sum = (a, b) =>
+ a + b
+const sum1 = num.reduce(sum)
+console.log(sum1);
+
+6.Fix the code to rotate an array by k times and return rotated array using IIFE function
+
+(function() {
+    var arr = [1, 2, 3, 6, 8, 6, 1, 9, 10, 12, 13];
+    var k = 3;
+    k = arr.length % k;
+// arr = {};
+ out = arr.slice(k + 1, arr.length);
+ var count = out.length;
+ for (var i = 0; i < k + 1; i++) {
+ out[count] = arr[i];
+ count += 1;
+ }
+ console.log(out);})();
+
+7.Fix the code to gen Title caps
+
+(function() {
+    var arr = ["guvi", "geek", "zen", "fullstack"];
+    for (var i = 0; i < arr.length; i++) {
+ console.log(arr[i].charAt(0).toUpperCase() + arr[i].substr(1).toLowerCase());
+ }
+})();
+
+8.print all odd numbers in an array using IIFE function
+
+var arr = [1, 2, 3, 5, 7, 79, 7, 2, 6, 9, 4];
+(function() {
+ for (var i = 0; i < arr.length; i++) {
+ if (arr[i] % 2 != 0) {
+ console.log(arr[i]);
+ }}
+})();
+
+9.Fix the code to reverse.
+
+(function(str){
+    str1 = str.split("").reverse().join("");
+    console.log(str1); 
+   })("abcd");
+   
+10.Fix the code to remove duplicates.
+
+var res = function(arr){
+    newArr = [];
+    for(var i=0; i < arr.length; i++){
+    if(newArr.indexOf(arr[i]) == -1) 
+    {
+    newArr.push(arr[i]);
+    } 
+}
+    console.log(newArr)
+   }
+   res(["guvi","geek","guvi","duplicate","geeK"])
+
+
+
+
+
+
