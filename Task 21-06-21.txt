@@ -664,3 +664,203 @@ var last=getLastElement([1,2,3,4,5]);
 console.log(last);
 var last=getLastElement([]);
 console.log(last);
+
+22.Write a function called “getProperty”.
+Given an object and a key, “getProperty” returns the value of the property at the given key. If there is no property at the given key, it should return undefined.
+
+function getProperty(obj, key) {
+    if(key in obj)
+    return obj[key];
+    else
+    return "NA";
+   }
+   var obj = {name:"Dhinesh",age:18,place:"Tamizhnadu"};
+   var property=getProperty(obj,"place");
+   console.log(property);
+
+23.Write a function called “addProperty”.
+Given an object and a key, “addProperty” adds a new property on the given object with a value of true.
+
+function addProperty(obj, arr) {
+ var b=obj[arr]="true"
+ return "mykey:"+b;
+   }
+   var obj = {name:"Dhinesh",age:18,place:"Tamizhnadu"};
+   var property=addProperty(obj,"mykey");
+   console.log(property);
+
+24.Write a function called “removeProperty”.
+Given an object and a key, “removeProperty” removes the given key from the given object
+
+function removeProperty(obj, key) {
+ return delete obj[key];
+   }
+   var obj = {name:"Dhinesh",age:18,place:"Tamizhnadu"};
+   var property=removeProperty(obj,"name");
+   console.log(obj["name"])
+   
+25.Return an array, where the first element is the count of positives numbers and the second element is sum of negative numbers.
+
+function countPositivesSumNegatives(arr) {
+var countofPositivenumbers=0;
+var sumofNegativenumbers=0;
+var ar1=[];
+for(var i=0;i<arr.length;i++)
+{
+    if(arr[i]>=0)
+    {
+        countofPositivenumbers=countofPositivenumbers+1;
+    }
+    else
+    {
+        sumofNegativenumbers=sumofNegativenumbers+arr[i];
+    }
+}
+ar1.push(countofPositivenumbers);
+ar1.push(sumofNegativenumbers);
+return ar1;
+}
+var arr = [-5, 10, -3, 12, -9, 5, 90, 0, 1];
+var postiveNegative=countPositivesSumNegatives(arr);
+console.log(postiveNegative);
+
+26.Create a function that receives an array of numbers and returns an array containing only the positive numbers
+
+function getPositives(arr) {
+var ar1=[];
+for(var i=0;i<arr.length;i++)
+{
+    if(arr[i]>=0)
+    {
+        ar1.push(arr[i]);
+    }
+}
+return ar1;
+}
+var arr = [-5, 10, -3, 12, -9, 5, 90, 0, 1];
+var postive=getPositives(arr);
+console.log(postive);
+
+27.Write a function `powersOfTwo` which will return list of all powers of 2 from 0 to n (where n is an exponent).
+
+function powersOfTwo(n){
+  var myArray = [];
+  for (var i=0; i<=n; i++){
+    myArray.push(2**i);
+  }
+  return myArray
+}
+const result = powersOfTwo(5)
+console.log(result);
+
+28.Find the maximum number in an array of numbers
+
+function findMax(arr)
+{
+var max=arr[0];
+for(var i=1;i<arr.length;i++)
+{
+    if(arr[i]>max)
+    max=arr[i];
+}
+return max;
+}
+var ar = [-5, 10, -3, 12, -9, 5, 90, 0, 1];
+var max = findMax(ar);
+console.log("Max: ", max);
+
+30.Print the first 100 prime numbers
+
+const isPrime = (n) => {
+    for(let i = 2; i <= n/2; i++){
+       if(n % i === 0){
+          return false;
+       }
+    };
+    return true;
+ };
+ const generatePrime = num => {
+    const arr = [];
+    let i = 2;
+    while(arr.length < num){
+       if(isPrime(i)){
+          arr.push(i);
+       };
+       i = i === 2 ? i+1 : i+2;
+    };
+    return arr;
+ };
+ console.log(generatePrime(100));
+
+31. Create a function that will return in an array the first “nPrimes” prime numbers greater than a particular number “startAt”
+
+function isPrime(n) 
+{
+    for(let i = 2; i <= n/2; i++){
+       if(n % i === 0){
+          return false;
+       }
+    }
+    return true;
+ }
+ function getPrimes(nPrimes, startAt)
+ {
+    var arr = [];
+    let i = 2;
+    while(arr.length < nPrimes){
+       if(isPrime(i))
+       {
+        if(i>startAt)
+          arr.push(i);
+       };
+       if(i===2)
+       {
+           i=i+1;
+       }
+       else
+       {
+           i=i+2;
+       }
+    };
+    return arr;
+ }
+ console.log(getPrimes(100,20));
+ 
+ 32.Reverse a string
+ 
+ function reverseString(str)
+{
+    let str1=str.split("");
+    let array=str1.reverse();
+    return reverseString=array.join("");
+    
+}
+var rstr=reverseString("Guvi");
+console.log(rstr);
+
+33.Create a function that will merge two arrays and return the result as a new array
+
+function mergeArrays(ar1, ar2)
+{  
+var result=[];
+result=ar1.concat(ar2);
+return result;
+}
+var ar1 = [1, 2, 3];
+var ar2 = [4, 5, 6];
+var ar = mergeArrays(ar1, ar2);
+console.log(ar);
+
+34.Calculate the sum of numbers received in a comma delimited string
+
+function sumCSV(str)
+{
+    var str_arr=str.split(",");
+    var sum=0;
+    for(var i=0;i<str_arr.length;i++)
+    {
+        sum=sum+parseFloat(str_arr[i]);
+    }
+    return sum;
+}
+console.log(sumCSV("1.5, 2.3, 3.1, 4, 5.5, 6, 7, 8, 9, 10.9"));
