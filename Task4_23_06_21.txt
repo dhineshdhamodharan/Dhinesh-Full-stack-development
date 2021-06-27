@@ -318,12 +318,12 @@ Expected Output:
 {firstName: “Sri”, lastName: “Devi”, age: 28, role: “Coder”}
 ]
 
-var array =[[["firstname","vasanth"],["lastname","Raje"],["age",24],["role","JSWizard"]],[["firstname","Sri"],["lastname","Devi"],["age",28],["role", "Coder"]]];
+var array =[[["firstname","vasanth"],["lastname","Raje"],["age",24],["role","JSWizard"]],[["firstname","Sri"],["lastname","Devi"],["age",24],["role", "Coder"]]];
 var final=[]
-var new_object=[];
 while(array.length!=0)
 {
  var outer_remove = array.shift();
+ var new_object={};
  while(outer_remove.length!=0)
  {
  var inner_remove = outer_remove.shift()
@@ -331,18 +331,9 @@ while(array.length!=0)
  var value =inner_remove[1]
  new_object[key]=value
 }
- final.push(new_object)
- 
- var arr=[new_object];
- console.log(arr)
+final.push(new_object);
 }
-
-Actual output:
-
-[
-  [ firstname: 'vasanth', lastname: 'Raje', age: 24, role: 'JSWizard' ]
-]
-[ [ firstname: 'Sri', lastname: 'Devi', age: 28, role: 'Coder' ] ]
+console.log(final);
 
 13. Fix the code to return the Prime numbers
 
